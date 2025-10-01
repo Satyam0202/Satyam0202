@@ -1,16 +1,35 @@
-## Hi there 👋
+# 👋 Hi, I'm Satyam Singh
 
-<!--
-**Satyam0202/Satyam0202** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**MCA Student at Chandigarh University**  
+Building projects with **SJR Team** | Passionate about Coding & Open Source
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 💻 Skills
+- **Programming Languages:** Python, Java, C++  
+- **Web Development:** HTML, CSS, JavaScript  
+- **Tools & Technologies:** GitHub, VS Code  
+
+
+---
+
+## 🚀 Current Projects
+- Working on innovative projects with **SJR Team**  
+- Exploring real-world applications in Web Development & AI
+
+---
+
+## 📫 Connect with me
+[![LinkedIn](https://www.linkedin.com/in/satya-singh-19252a361/) 
+✉️ Email:m4740600@gmail.com
+
+---
+
+## 📊 GitHub Stats
+![manni0202's GitHub stats](https://github-readme-stats.vercel.app/api?username=satyam0202&show_icons=true&theme=radical)
+
+---
+
+## ⚡ Fun Fact
+- Always learning and exploring new technologies 🌟
+- Open Source Enthusiast 💻
