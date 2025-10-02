@@ -12,11 +12,10 @@ Building projects with **SJR Team** | Passionate about Coding & Open Source
 
 
 ---
-
 ## 🚀 Current Projects
 - Working on innovative projects with **SJR Team**  
-- Exploring real-world applications in Web Development & AI
-
+- Exploring real-world applications in Web Development & AI  
+- 🌐 [My Project Link](https://satyam0202.github.io/Satyam0202/)  
 ---
 
 ## 📫 Connect with me
@@ -31,5 +30,4 @@ Building projects with **SJR Team** | Passionate about Coding & Open Source
 ---
 
 ## ⚡ Fun Fact
-- Always learning and exploring new technologies 🌟
-- Open Source Enthusiast 💻
+- Food Lover 🍕🍔                                                             
