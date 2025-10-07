@@ -1,57 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="stylesheet" href="index.css">
-    <title>Our World</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City-Sathi</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">
+  <!-- HEADER -->
+  <header class="navbar">
     <div class="logo">
-        <img src="logo_main.png" alt="Global Logo">
+      <img src="logo_main.png" alt="City-Sathi Logo">
+      <h1>City-Sathi</h1>
     </div>
-    <nav class="nav-links">
-        <a href="#" class="home">Home</a>
-        <a href="#" class="service">Services</a>
-        <a href="#" class="student">Student Panel</a>
-        <div class="right">
-            <!-- for mode -->
-            <button onclick="mode()">
-                <img id="mode" src="dark.png" alt="dark">
-            </button>
-            <div class="menu">⋯</div>
-        </div>
-    </nav>
-        
+    <img src="header.png" alt="walker" class="walker">
+    <div class="right">
+      <button onclick="mode()">
+        <img id="mode" src="dark.png" alt="mode">
+      </button>
+      <div class="menu" onclick="toggleMenu()">
+        <img src="cross.png" alt="cross">
+      </div>
+    </div>
   </header>
 
-  <section class="info-card">
-        <div class="card yellow">
-            <p><strong>Current Location:</strong> New Delhi</p>
-            <p>Weather: 32°C, Sunny</p>
-        </div>
-        <div class="card purple">
-            <p>Connaught Place AIIMS</p>
-            <p>7 km, 20 min</p>
-        </div>
-        <div class="card green">
-            <p><strong>Time:</strong> 10:30 AM</p>
-            <p>Date: Monday, July 29</p>
-        </div>
-  </section>
+  <!-- SIDE MENU -->
+  <div id="sideMenu" class="side-menu">
+    <a href="#" onclick="openpop()">
+      <strong>
+        SIGN-UP....
+        <hr>
+      </strong>
+    </a>
+    <span class="closebtn" onclick="toggleMenu()">x</span>
+    <a href="#">
+      <img src="home.png" alt="Home" class="menu-icon">
+      Home
+    </a>
+    <a href="#">
+      <img src="service.png" alt="service" class="menu-icon"> 
+      Services
+    </a>
+    <a href="#">
+      <img src="hostel (2).png" alt="hostel" class="menu-icon"> 
+      Hostels
+    </a>
+    <a href="#">
+      <img src="resturantt.png" alt="resturant" class="menu-icon"> 
+      Restaurants
+    </a>
+    <a href="#">
+      <img src="hospitall.png" alt="hospital" class="menu-icon"> 
+      Hospitals</a>
+    <a href="#">
+      <img src="markett.png" alt="market"
+      class="menu-icon">
+      Markets</a>
+    <a href="#">
+      <img src="contactt.png" alt="contact" class="menu-icon"> 
+      Contact</a>
+  </div>
 
-<section class="search-box">
-    <input type="text" placeholder="Search for places or routes…">
-    <button>Search</button>
-</section>
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <section class="info-card">
+      <div class="card yellow">
+        <p><strong>Current Location:</strong> Chandigarh</p>
+        <p>Weather: 30°C, Sunny</p>
+      </div>
+      <div class="card purple">
+        <p>Sector 17 → Hostel Avenue</p>
+        <p>2.5 km, 10 min</p>
+      </div>
+      <div class="card green">
+        <p><strong>Time:</strong> 10:30 AM</p>
+        <p>Date: 07 Oct 2025</p>
+      </div>
+    </section>
 
-<section class="quick-actions">
-    <h3>Quick Actions</h3>
-    <div class="actions">
-        <span><img src="walk.png" alt="walk"> Walk</span>
-        <span><img src="car (2).png" alt="car"> Drive</span>
+    <section class="search-box">
+      <input type="text" placeholder="Search for hotels, routes, or restaurants…">
+      <button>Search</button>
+    </section>
+
+    <section class="quick-actions">
+      <h3>Quick Actions</h3>
+      <div class="actions">
+        <span><img src="walk.png" alt="walk">Walk</span>
+        <span><img src="car (2).png" alt="car">Drive</span>
         <span><img src="bike.png" alt="bike">Bike</span>
         <span><img src="train.png" alt="train">Train</span>
         <span><img src="hostel.png" alt="hostel">Hotels</span>
@@ -60,16 +98,61 @@
         <span><img src="market.png" alt="market">Markets</span>
         <span><img src="uber (2).png" alt="uber">Uber</span>
         <span><img src="ola.png" alt="ola">Ola</span>
-    </div>
-  </section>
-<section class="popular">
-    <h3>Popular Destinations</h3>
-    <div class="places">
+      </div>
+    </section>
+
+    <section class="popular">
+      <h3>Popular Nearby Places</h3>
+      <div class="places">
         <img src="india-gate.jpg" alt="India Gate">
         <img src="qu.jpg" alt="Qutub Minar">
         <img src="lotus.jpg" alt="Lotus Temple">
-    </div>
-  </section>
- <script src="index.js"></script>
+      </div>
+    </section>
+  </main>
+
+  <!-- SIGN-UP POPUP -->
+  <div id="pop-form" class="pop-up">
+        <div class="pop-box">
+          <div class="img">
+            <img src="login-img.png" alt="login-img" id="login-img">
+          </div>
+          <div class="content">      
+              <span class="popclose" onclick="closepop()">×</span>
+              <h2>Sign Up</h2>
+              <form>
+                <input type="text" placeholder="Enter Name" required><br>
+                <input type="email" placeholder="Email Address" required><br>
+                <input type="password" placeholder="Password" required>
+                <br>
+                <button type="submit" id="submit">Sign Up</button>
+              </form>
+          </div>
+        </div>
+  </div>
+
+ <!-- FLOATING TEAM BUTTON -->
+<div class="team-fab" id="teamFab" onclick="toggleTeam()">
+    <p style="
+      font-size: small;
+      font-weight: bold;
+      text-align: center;
+      ">Team <br>SJR
+    </p>
+</div>
+
+<div class="team-container" id="teamContainer">
+  <a href="Ravi.html" class="team-member" style="--angle: 110deg;">
+    <img src="Ravi.jpg" alt="Ravi"><br>Ravi
+  </a>
+  <a href="Jyoti.html" class="team-member" style="--angle: 60deg;">
+    <img src="Jyoti.jpg" alt="Jyoti"><br>Jyoti
+  </a>
+  <a href="Satyam.html" class="team-member" style="--angle: -10deg;">
+    <img src="profie.jpg" alt="Satyam"><br>Satyam
+  </a>
+</div>
+
+  <script src="index.js"></script>
 </body>
 </html>
