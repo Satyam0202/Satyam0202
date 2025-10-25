@@ -355,9 +355,9 @@ body.dark #city-select
 }
 .pop-box img
 {
-    width:10rem;
+    width:9rem;
     /* margin-top: rem; */
-    margin-left: -6rem;
+    margin-left: -2rem;
 }
 .pop-box form input
 {
