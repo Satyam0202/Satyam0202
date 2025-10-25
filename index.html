@@ -1,157 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>City-Sathi</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="stylesheet" href="index.css">
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="navbar">
     <div class="logo">
-      <img src="logo_main.png" alt="City-Sathi Logo">
+      <img src="logo_main.png" alt="City-Sathi Logo" />
       <h1>City-Sathi</h1>
     </div>
-    <img src="header.png" alt="walker" class="walker">
     <div class="right">
-      <button onclick="mode()">
-        <img id="mode" src="dark.png" alt="mode">
+      <button class="mode-btn" onclick="mode()">
+        <img id="mode" src="mode.png" alt="mode icon" />
       </button>
       <div class="menu" onclick="toggleMenu()">
-        <img src="cross.png" alt="cross">
+        <img src="menu_dark.png" alt="menu" id="menu_bar">
       </div>
     </div>
   </header>
 
   <!-- SIDE MENU -->
-  <div id="sideMenu" class="side-menu">
-    <a href="#" onclick="openpop()">
-      <strong>
-        SIGN-UP....
-        <hr>
-      </strong>
-    </a>
-    <span class="closebtn" onclick="toggleMenu()">x</span>
-    <a href="#">
-      <img src="home.png" alt="Home" class="menu-icon">
-      Home
-    </a>
-    <a href="#">
-      <img src="service.png" alt="service" class="menu-icon"> 
-      Services
-    </a>
-    <a href="#">
-      <img src="hostel (2).png" alt="hostel" class="menu-icon"> 
-      Hostels
-    </a>
-    <a href="#">
-      <img src="resturantt.png" alt="resturant" class="menu-icon"> 
-      Restaurants
-    </a>
-    <a href="#">
-      <img src="hospitall.png" alt="hospital" class="menu-icon"> 
-      Hospitals</a>
-    <a href="#">
-      <img src="markett.png" alt="market"
-      class="menu-icon">
-      Markets</a>
-    <a href="#">
-      <img src="contactt.png" alt="contact" class="menu-icon"> 
-      Contact</a>
-  </div>
+  <nav id="sideMenu" class="side-menu">
+    <span class="closebtn" onclick="toggleMenu()">×</span>
+    <a href="#" onclick="openpop()"><strong>SIGN-UP</strong><hr /></a>
+    <a href="#"><img src="home.png" class="menu-icon" />Home</a>
+    <a href="#"><img src="service.png" class="menu-icon" />Services</a>
+    <a href="#"><img src="hostel (2).png" class="menu-icon" />Hostels</a>
+    <a href="#"><img src="resturantt.png" class="menu-icon" />Restaurants</a>
+    <a href="#"><img src="hospitall.png" class="menu-icon" />Hospitals</a>
+    <a href="#"><img src="markett.png" class="menu-icon" />Markets</a>
+    <a href="#"><img src="contactt.png" class="menu-icon" />Contact</a>
+  </nav>
 
-  <!-- MAIN CONTENT -->
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-left">
+      <h2>Discover your city — faster, safer, simpler.</h2>
+      <p>All essential info, routes, nearby services, and rides in one global platform.</p>
+      <div class="hero-btns">
+        <button class="primary">Explore City</button>
+        <button class="ghost" onclick="toggleMenu()">See Services</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="dark_illusion.png" id="hero_image" alt="hero">
+    </div>
+  </section>
+
+  <!-- INFO CARDS -->
   <main class="content">
     <section class="info-card">
-      <div class="card yellow">
-        <p><strong>Current Location:</strong> Chandigarh</p>
-        <p>Weather: 30°C, Sunny</p>
-      </div>
-      <div class="card purple">
+        <div class="card yellow">
+          <p><strong>Current Location:</strong> 
+              <span id="city-name">Chandigarh</span>
+          </p>
+          <p>Weather: <span id="temperature">--</span></p><br>
+        </div>  
+  <div class="card purple">
         <p>Sector 17 → Hostel Avenue</p>
-        <p>2.5 km, 10 min</p>
-      </div>
-      <div class="card green">
-        <p><strong>Time:</strong> 10:30 AM</p>
-        <p>Date: 07 Oct 2025</p>
-      </div>
-    </section>
+        <p>2.5 km · 10 min</p>
+  </div>
+  
+  <div class="card green">
+      <p><strong>
+          <span>Time: <span id="current-time">--  :  --</span></p>
+          <span>Date: <span id="current-date">-- :  --</span></p>
+          <span>Day: <span id="current-day">-- </span></p>
+      </strong></p>
+    </div>
+</section>
 
+    <img src="search.png" alt="search" id="search">
     <section class="search-box">
-      <input type="text" placeholder="Search for hotels, routes, or restaurants…">
+      <input type="text" placeholder="Search for hotels, routes, or restaurants…" />
       <button>Search</button>
     </section>
 
     <section class="quick-actions">
       <h3>Quick Actions</h3>
       <div class="actions">
-        <span><img src="walk.png" alt="walk">Walk</span>
-        <span><img src="car (2).png" alt="car">Drive</span>
-        <span><img src="bike.png" alt="bike">Bike</span>
-        <span><img src="train.png" alt="train">Train</span>
-        <span><img src="hostel.png" alt="hostel">Hotels</span>
-        <span><img src="resturant.png" alt="restaurent">Restaurants</span>
-        <span><img src="hospital.png" alt="hospital">Hospitals</span>
-        <span><img src="market.png" alt="market">Markets</span>
-        <span><img src="uber (2).png" alt="uber">Uber</span>
-        <span><img src="ola.png" alt="ola">Ola</span>
+        <span><img src="walk.png" />Walk</span>
+        <span><img src="car (2).png" />Drive</span>
+        <span><img src="bike.png" />Bike</span>
+        <span><img src="train.png" />Train</span>
+        <span><img src="hostel.png" />Hotels</span>
+        <span><img src="resturant.png" />Restaurants</span>
+        <span><img src="hospital.png" />Hospitals</span>
+        <span><img src="market.png" />Markets</span>
+        <span><img src="uber (2).png" />Uber</span>
+        <span><img src="ola.png" />Ola</span>
       </div>
     </section>
 
     <section class="popular">
       <h3>Popular Nearby Places</h3>
       <div class="places">
-        <img src="india-gate.jpg" alt="India Gate">
-        <img src="qu.jpg" alt="Qutub Minar">
-        <img src="lotus.jpg" alt="Lotus Temple">
+        <img src="india-gate.jpg" alt="India Gate" />
+        <img src="qu.jpg" alt="Qutub Minar" />
+        <img src="lotus.jpg" alt="Lotus Temple" />
       </div>
     </section>
   </main>
 
   <!-- SIGN-UP POPUP -->
   <div id="pop-form" class="pop-up">
-        <div class="pop-box">
-          <div class="img">
-            <img src="login-img.png" alt="login-img" id="login-img">
-          </div>
-          <div class="content">      
-              <span class="popclose" onclick="closepop()">×</span>
-              <h2>Sign Up</h2>
-              <form>
-                <input type="text" placeholder="Enter Name" required><br>
-                <input type="email" placeholder="Email Address" required><br>
-                <input type="password" placeholder="Password" required>
-                <br>
-                <button type="submit" id="submit">Sign Up</button>
-              </form>
-          </div>
-        </div>
+    <div class="pop-box">
+      <span class="popclose" onclick="closepop()">×</span>
+      <div class="img"><img src="form_icon.png" alt="login" /id="form_icon"></div>
+      <div class="content">
+        <h2>Sign Up</h2>
+        <form>
+          <input type="text" placeholder="Name" required /class="form_input"><br />
+          <input type="email" placeholder="Email" required /class="form_input"><br />
+          <input type="password" placeholder="Password" required / class="form_input"><br />
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
   </div>
 
- <!-- FLOATING TEAM BUTTON -->
-<div class="team-fab" id="teamFab" onclick="toggleTeam()">
-    <p style="
-      font-size: small;
-      font-weight: bold;
-      text-align: center;
-      ">Team <br>SJR
-    </p>
-</div>
+  <!-- TEAM BUTTON -->
+  <div class="team-fab" onclick="toggleTeam()">
+    <p>Team<br />SJR</p>
+  </div>
 
-<div class="team-container" id="teamContainer">
-  <a href="Ravi.html" class="team-member" style="--angle: 110deg;">
-    <img src="Ravi.jpg" alt="Ravi"><br>Ravi
-  </a>
-  <a href="Jyoti.html" class="team-member" style="--angle: 60deg;">
-    <img src="Jyoti.jpg" alt="Jyoti"><br>Jyoti
-  </a>
-  <a href="Satyam.html" class="team-member" style="--angle: -10deg;">
-    <img src="profie.jpg" alt="Satyam"><br>Satyam
-  </a>
-</div>
+  <div class="team-container" id="teamContainer">
+    <a href="Ravi.html" class="team-member" style="--angle:110deg;">
+      <img src="Ravi.jpg" /><br />Ravi
+    </a>
+    <a href="Jyoti.html" class="team-member" style="--angle:60deg;">
+      <img src="Jyoti.jpg" /><br />Jyoti
+    </a>
+    <a href="Satyam.html" class="team-member" style="--angle:-10deg;">
+      <img src="profie.jpg" /><br />Satyam
+    </a>
+  </div>
 
   <script src="index.js"></script>
 </body>
