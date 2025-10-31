@@ -42,7 +42,7 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-left">
-      <h2>Discover your city — faster, safer, simpler.</h2>
+      <h2 class="typewriter">Discover your city — faster, safer, simpler.</h2>
       <p>All essential info, routes, nearby services, and rides in one global platform.</p>
       <div class="hero-btns">
         <button class="primary">Explore City</button>
@@ -77,9 +77,10 @@
     </div>
 </section>
 
+<!--SEARCH  -->
     <img src="search.png" alt="search" id="search">
     <section class="search-box">
-      <input type="text" placeholder="Search for hotels, routes, or restaurants…" />
+      <input type="text" placeholder="Search for hotels, routes, or restaurants…" id="search_input"/>
       <button>Search</button>
     </section>
 
@@ -99,14 +100,166 @@
       </div>
     </section>
 
-    <section class="popular">
-      <h3>Popular Nearby Places</h3>
-      <div class="places">
-        <img src="india-gate.jpg" alt="India Gate" />
-        <img src="qu.jpg" alt="Qutub Minar" />
-        <img src="lotus.jpg" alt="Lotus Temple" />
+  <section class="popular">
+  <div class="places">
+    <div class="place-card" id="places_pro">
+      <img src="popular_places.jpg" alt="Rock Garden">
+      <strong>Popular Places</strong>
+    </div>
+    <div class="place-card">
+      <img src="rock_garden_chandigarh.png" alt="Rock Garden">
+      <h4>Rock Garden</h4>
+      <p>Created by Nek Chand, this artistic garden is built entirely from industrial waste and scraps.</p>
+    </div>
+    <div class="place-card">
+      <img src="sukhna_lake_chandigarh.png" alt="Sukhna Lake">
+      <h4>Sukhna Lake</h4>
+      <p>A peaceful lake at the foothills of Shivaliks — perfect for boating and morning walks.</p>
+    </div>
+    <div class="place-card">
+      <img src="Zakir_Garden_chandigarh.png" alt="Rose Garden">
+      <h4>Rose Garden</h4>
+      <p>Asia’s largest rose garden, home to over 1,600 varieties of roses and vibrant seasonal flowers.</p>
+    </div>
+
+    <div class="place-card">
+      <img src="Open_Hand_Monument.png" alt="Open Hand Monument">
+      <h4>Open Hand Monument</h4>
+      <p>Symbol of peace and unity designed by Le Corbusier, representing “open to give and open to receive.”</p>
+    </div>
+
+    <div class="place-card">
+      <img src="vintaz_car_chandigarh.png" alt="Vintage Car Museum">
+      <h4>Vintage Car Museum</h4>
+      <p>Home to beautifully restored classic automobiles, celebrating timeless design and engineering.</p>
+    </div>
+
+    <div class="place-card">
+      <img src="sec17_market.png" alt="Sector 17 Market">
+      <h4>Sector 17 Market</h4>
+      <p>Chandigarh’s iconic shopping hub filled with brands, cafes, and lively city charm.</p>
+    </div>
+    
+<section class="hotels-section">
+  <h3>Popular Hotels</h3>
+
+  <!-- ========== Hotel 1 ========== -->
+  <div class="hotel-card">
+    <img src="taj.png" alt="Taj Chandigarh"/>
+    <div class="hotel-details">
+      <h2>Taj Chandigarh <span class="stars">★★★★★</span></h2>
+      <p class="location">Sector 17, Chandigarh — Near Rose Garden</p>
+      <p class="desc">5-star luxury hotel known for its comfort, elegance, and fine dining.</p>
+      <p id="distance-taj">📍 Distance: -- km</p>
+
+      <div class="bottom-info">
+        <div class="rating">
+          <span class="score">9.1</span>
+          <span>Superb<br><small>1,243 reviews</small></span>
+        </div>
+        <div class="price">
+          <span class="old">₹9,999</span>
+          <span class="new">₹7,899</span><br>
+          <small>Includes taxes & charges</small>
+        </div>
+        <button class="btn">View Property</button>
       </div>
-    </section>
+    </div>
+  </div>
+
+  <!-- ========== Hotel 2 ========== -->
+  <div class="hotel-card">
+    <img src="lalit.png" alt="The Lalit Chandigarh"/>
+    <div class="hotel-details">
+      <h2>The Lalit Chandigarh <span class="stars">★★★★☆</span></h2>
+      <p class="location">Rajiv Gandhi IT Park, Chandigarh</p>
+      <p class="desc">Modern luxury hotel with rooftop pool, spa, and beautiful views.</p>
+      <p id="distance-lalit">📍 Distance: -- km</p>
+
+      <div class="bottom-info">
+        <div class="rating">
+          <span class="score">8.7</span>
+          <span>Very Good<br><small>2,134 reviews</small></span>
+        </div>
+        <div class="price">
+          <span class="old">₹8,499</span>
+          <span class="new">₹6,799</span><br>
+          <small>Includes taxes & charges</small>
+        </div>
+        <button class="btn">View Property</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Hotel 3 ========== -->
+  <div class="hotel-card">
+    <img src="mot.png" alt="Hotel Mountview"/>
+    <div class="hotel-details">
+      <h2>Hotel Mountview <span class="stars">★★★★</span></h2>
+      <p class="location">Sector 10, Chandigarh</p>
+      <p class="desc">Classic stay with lush surroundings and excellent hospitality.</p>
+      <p id="distance-mountview">📍 Distance: -- km</p>
+
+      <div class="bottom-info">
+        <div class="rating">
+          <span class="score">8.9</span>
+          <span>Excellent<br><small>987 reviews</small></span>
+        </div>
+        <div class="price">
+          <span class="old">₹7,599</span>
+          <span class="new">₹6,299</span><br>
+          <small>Includes taxes & charges</small>
+        </div>
+        <button class="btn">View Property</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div class="places">
+    <div class="place-card">
+      <img src="PGIMER.jpg" alt="PGIMER">
+      <h4>PGIMER</h4>
+      <p>One of India’s top medical institutes, providing advanced healthcare and research facilities.</p>
+    </div>
+    
+    <div class="place-card">
+      <img src="FORTIL.jpg" alt="Fortis Hospital">
+      <h4>Fortis Hospital</h4>
+      <p>A leading multi-specialty hospital with cutting-edge medical technology and services.</p>
+    </div>
+    
+    <div class="place-card">
+      <img src="Max_hospital.jpg" alt="Max Hospital">
+      <h4>Max Hospital</h4>
+      <p>Renowned for its modern infrastructure and   patient-centric medical care.</p>
+    </div>
+  </div>
+
+  
+    <div class="places">
+      <div class="place-card">
+        <img src="pu.jpg" alt="Panjab University">
+        <h4>Panjab University</h4>
+        <p>A prestigious institution with rich academic heritage and lush green campus.</p>
+      </div>
+    
+      <div class="place-card">
+        <img src="pec.jpg" alt="PEC Chandigarh">
+        <h4>PEC Chandigarh</h4>
+        <p>Premier engineering college known for its excellence in technical education and innovation.</p>
+      </div>
+    
+      <div class="place-card">
+        <img src="chikara.jpg" alt="Chitkara University">
+        <h4>Chitkara University</h4>
+        <p>Fast-growing university focused on innovation, design, and entrepreneurship.</p>
+      </div>
+  </div>
+</section>
+
+
   </main>
 
   <!-- SIGN-UP POPUP -->
@@ -142,6 +295,76 @@
       <img src="profie.jpg" /><br />Satyam
     </a>
   </div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <!-- Footer Top -->
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="logo_main.png" alt="City-Sathi Logo" />
+        <h3>City-Sathi</h3>
+        <p>Your all-in-one city companion — explore, navigate, and live smarter.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="link-column">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">Popular Places</a></li>
+            <li><a href="#">Hostels & PGs</a></li>
+            <li><a href="#">Restaurants</a></li>
+            <li><a href="#">Hospitals</a></li>
+            <li><a href="#">Markets</a></li>
+          </ul>
+        </div>
+
+        <div class="link-column">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#">Routes & Maps</a></li>
+            <li><a href="#">Public Transport</a></li>
+            <li><a href="#">Ride Booking</a></li>
+            <li><a href="#">Live Traffic</a></li>
+          </ul>
+        </div>
+
+        <div class="link-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Team SJR</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="link-column">
+          <h4>Connect</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><img src="instagram.png" alt="Instagram" /></a>
+            <a href="#" aria-label="Twitter"><img src="twitter.png" alt="Twitter" /></a>
+            <a href="#" aria-label="Facebook"><img src="facebook.png" alt="Facebook" /></a>
+            <a href="#" aria-label="LinkedIn"><img src="linkedin.png" alt="LinkedIn" /></a>
+          </div>
+          <p class="newsletter">
+            <small>Get updates on new cities & features</small><br />
+            <input type="email" placeholder="Your email" />
+            <button>Subscribe</button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 <strong>City-Sathi</strong>. Crafted with by <strong>Team SJR</strong> in Chandigarh.</p>
+      <p class="tagline">Making cities simpler, one click at a time.</p>
+    </div>
+  </div>
+</footer>
 
   <script src="index.js"></script>
 </body>
