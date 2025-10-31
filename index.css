@@ -184,6 +184,38 @@ body
         transform:translateY(-10px)
     }
 }
+/* .typewriter 
+{
+    display: inline-block;
+    overflow: hidden;
+    white-space:wrap;
+    border-right:3px solid #333; 
+    animation:typing 20s steps(40, end) infinite alternate, blink 0.7s step-end infinite;
+}
+
+@keyframes typing 
+{
+  0%
+    { 
+        width: 0; 
+    }
+    50%
+    { 
+        width: 100%; 
+    }
+    100%
+    {
+        width: 0;
+    }
+}
+@keyframes blink 
+{
+    50% 
+    { 
+        border-color: transparent; 
+    }
+} */
+
 
 /* Cards */
 .content
@@ -269,6 +301,31 @@ body.dark #city-select
 {
     background:#ff8b6a;
 }
+.search-box 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+#search_input 
+{
+    width:80%;
+    padding:12px 18px;
+    font-size:1rem;
+    border:2px solid #0048ff;
+    border-radius:12px;
+    outline:none;
+    transition:all 0.3s ease;
+}
+
+#search_input:focus 
+{
+    box-shadow:0 0 10px rgba(0, 72, 255, 0.3);
+}
+
+
 /* Quick Actions */
 .actions
 {
@@ -298,24 +355,60 @@ body.dark #city-select
     width:28px;
 }
 /* Popular */
+
 .places
 {
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 1rem;
 }
-.places img
+.place-card 
 {
-    width:280px;
-    height:180px;
-    object-fit:cover;
-    border-radius:12px;
-    transition:.3s;
+    width: 250px;
+    background: rgba(10, 10, 10, 0.05);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    color: #131212;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.places img:hover
+.place-card img 
 {
-    transform:scale(1.05);
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 8px;
 }
+#places_pro img 
+{
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+.place-card h4 
+{
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #3b82f6;
+}
+.place-card p 
+{
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+    color: #1a1919;
+}
+.place-card:hover 
+{
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+
 /* Popup */
 .pop-up
 {
@@ -336,7 +429,7 @@ body.dark #city-select
     border-radius:12px;
     padding:;
     display:flex;
-    gap:2rem;
+    gap:1rem;
     position:relative;
     width:30rem;           
     max-width: 90%;         
@@ -446,6 +539,154 @@ body.dark #city-select
     margin-left: 15rem;   
 }
 
+.hotels-section ,#hospital
+{
+    margin:40px auto;
+    width:90%;
+    font-family:"Poppins",sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.hotels-section h3 
+{
+    font-size:1.8rem;
+    font-weight:600;
+    margin-bottom:20px;
+}
+.hotel-card 
+{
+    display:flex;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:0.3s ease;
+}
+.hotel-card:hover 
+{
+    transform:translateY(-5px);
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+.hotel-card img 
+{
+    width:270px;
+    height:200px;
+    object-fit:cover;
+}
+.hotel-details 
+{
+    padding:15px 20px;
+    flex:1;
+}
+.hotel-details h2 
+{
+    font-size:1.3rem;
+    margin-bottom:5px;
+    color:#1a1a1a;
+}
+.stars 
+{
+    color:#ffb400;
+}
+.location 
+{
+    color:#0071c2;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+.desc 
+{
+  color: #444;
+  margin-bottom: 8px;
+}
+.distance 
+{
+    font-size:0.9rem;
+    color:#666;
+    margin-bottom: 10px;
+}
+.bottom-info 
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    border-top:1px solid #eee;
+    padding-top:10px;
+}
+.rating 
+{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.score 
+{
+    background:#003580;
+    color:white;
+    font-weight:600;
+    padding:6px 10px;
+    border-radius:6px;
+    font-size:1rem;
+}
+.price 
+{
+    text-align:right;
+}
+.price .old 
+{
+    text-decoration:line-through;
+    color:#888;
+    font-size:0.9rem;
+}
+.price .new 
+{
+    color:#d32f2f;
+    font-weight:600;
+    font-size:1.2rem;
+}
+.btn 
+{
+    background:#0071c2;
+    color:white;
+    border:none;
+    padding:10px 14px;
+    border-radius:6px;
+    cursor:pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover 
+{
+    background:#005fa3;
+}
+
+/* Responsive */
+@media (max-width: 768px) 
+{
+    .hotel-card 
+    {
+        flex-direction:column;
+    }
+    .hotel-card img 
+    {
+        width:100%;
+        height:220px;
+    }
+    .bottom-info 
+    {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+    .price 
+    {
+        text-align:left;
+    }
+}
+
+
 /* ============================================= */
 /* Dark Mode */
 body.dark
@@ -502,6 +743,232 @@ body.dark .pop-box .form_input::placeholder
 {
     color:white;
 }
+body.dark .place-card 
+{
+    background: black;
+    color: #f8f3f3;
+}
+body.dark .place-card p 
+{
+    color: #f1f1f1;
+}
+body.dark .place-card h4 
+{
+  color: #2563eb;
+}
+
+body.dark .hotel-card 
+{
+    background:#141414;
+    box-shadow:0 4px 15px rgba(247, 244, 244, 0.1);
+}
+body.dark .hotels-section h3 ,.hotel-details h2,.desc,.distance
+{
+    color: white;
+}
+
+/* ============================================= */
+/* FOOTER */
+.site-footer
+{
+    background:linear-gradient(135deg,#1a1a2e,#16213e);
+    color:#e0e0e0;
+    padding:60px 10% 20px;
+    margin-top:80px;
+    font-family:'Poppins',sans-serif;
+}
+.footer-container
+{
+    max-width:1200px;
+    margin:0 auto;
+}
+.footer-top
+{
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    justify-content:space-between;
+    margin-bottom:40px;
+}
+.footer-logo
+{
+    flex:1;
+    min-width:250px;
+}
+.footer-logo img
+{
+    height:40px;
+    margin-bottom:12px;
+}
+.footer-logo h3
+{
+    color:#00d4ff;
+    margin:0 0 10px;
+    font-size:1.6rem;
+    font-weight:600;
+}
+.footer-logo p
+{
+    font-size:0.95rem;
+    line-height:1.6;
+    color:#bbbbbb;
+}
+.footer-links
+{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    flex:2;
+}
+.link-column
+{
+    min-width:140px;
+}
+.link-column h4
+{
+    color:#00d4ff;
+    margin-bottom:16px;
+    font-size:1.1rem;
+    position:relative;
+    font-weight:600;
+}
+.link-column h4::after
+{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:30px;
+    height:2px;
+    background:#00d4ff;
+}
+.link-column ul
+{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+.link-column ul li
+{
+    margin-bottom:10px;
+}
+.link-column ul li a
+{
+    color:#cccccc;
+    text-decoration:none;
+    font-size:0.95rem;
+    transition:color .3s;
+}
+.link-column ul li a:hover
+{
+    color:#00d4ff;
+}
+.social-links
+{
+    display:flex;
+    gap:12px;
+    margin-bottom:16px;
+}
+.social-links a img
+{
+    width:28px;
+    height:28px;
+    filter:grayscale(100%) brightness(200%);
+    transition:all .3s;
+}
+.social-links a:hover img
+{
+    filter:grayscale(0%) hue-rotate(180deg);
+    transform:scale(1.1);
+}
+.newsletter input
+{
+    padding:10px;
+    border:none;
+    border-radius:6px 0 0 6px;
+    width:160px;
+    font-size:0.9rem;
+    background:#333;
+    color:#fff;
+}
+.newsletter button
+{
+    padding:10px 14px;
+    background:#00d4ff;
+    color:#000;
+    border:none;
+    border-radius:0 6px 6px 0;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+.newsletter button:hover
+{
+    background:#00b8e6;
+}
+.footer-bottom
+{
+    text-align:center;
+    padding-top:20px;
+    border-top:1px solid #333;
+    font-size:0.9rem;
+    color:#999;
+}
+.footer-bottom strong
+{
+    color:#00d4ff;
+}
+.tagline
+{
+    margin:8px 0 0;
+    font-style:italic;
+    color:#777;
+    font-size:0.85rem;
+}
+
+/* Responsive Footer */
+@media (max-width:768px)
+{
+    .footer-top
+    {
+        flex-direction:column;
+        text-align:center;
+    }
+    .footer-links
+    {
+        justify-content:center;
+    }
+    .newsletter input
+    {
+        width:100%;
+        border-radius:6px;
+        margin-bottom:10px;
+    }
+    .newsletter button
+    {
+        width:100%;
+        border-radius:6px;
+    }
+}
+
+/* ============================================= */
+/* Dark Mode Footer Support */
+body.dark .site-footer
+{
+    background:linear-gradient(135deg,#0f0f1a,#0a0e1a);
+}
+body.dark .newsletter input
+{
+    background:#222;
+    color:#fff;
+    border:1px solid #444;
+}
+body.dark .footer-bottom
+{
+    color:#aaa;
+}
+
+
 
 @media(max-width:850px)
 {
