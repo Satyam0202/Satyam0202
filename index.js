@@ -166,3 +166,115 @@ function updateDateTime()
 // Call once + update every second
 updateDateTime();
 setInterval(updateDateTime, 1000);
+
+
+//  typo
+const input=document.getElementById("search_input");
+const texts=
+[
+  "Search for hotels...",
+  "Search for restaurants...",
+  "Search for hospitals...",
+  "Search for routes...",
+  "Search for markets..."
+];
+let textIndex=0;
+let charIndex=0;
+let typing=true;
+
+function typeEffect() 
+{
+    let currentText=texts[textIndex];
+    if(typing) 
+    {
+        input.placeholder=currentText.substring(0,charIndex++);
+        if(charIndex>currentText.length) 
+        {
+            typing=false;
+            setTimeout(typeEffect, 1000); // pause before deleting
+            return;
+        }
+    } 
+    else 
+    {
+        input.placeholder=currentText.substring(0, charIndex--);
+        if(charIndex<0) 
+        {
+            typing=true;
+            textIndex=(textIndex + 1) % texts.length;
+        }
+    }
+    setTimeout(typeEffect,typing?100:50); // typing speed
+}
+typeEffect();
+
+
+// ================== HOTEL DISTANCE (Real Driving Distance using OpenRouteService) ==================
+
+const ORS_API_KEY = "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjJmZTJiM2RjZWY1ZTRjYzlhMWE0YjRkZTI0NDQzOWQ0IiwiaCI6Im11cm11cjY0In0=";
+
+// Chandigarh hotel coordinates (latitude, longitude)
+const hotels = {
+  taj: { lat: 30.7398, lon: 76.7826 },        // Taj Chandigarh
+  lalit: { lat: 30.7065, lon: 76.8087 },      // The Lalit Chandigarh
+  mountview: { lat: 30.7490, lon: 76.7872 }   // Hotel Mountview
+};
+
+// Get distance from OpenRouteService API
+async function getRealDistanceORS(userLat, userLon, hotelLat, hotelLon) {
+  // ORS expects (lon, lat) order
+  const url = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=${ORS_API_KEY}&start=${userLon},${userLat}&end=${hotelLon},${hotelLat}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data && data.features && data.features.length > 0) {
+      const summary = data.features[0].properties.summary;
+      const distanceKm = (summary.distance / 1000).toFixed(2);
+      const durationMin = Math.round(summary.duration / 60);
+      return { distanceKm, durationMin };
+    } else {
+      console.warn("No valid route data:", data);
+      return null;
+    }
+  } catch (err) {
+    console.error("Error fetching ORS data:", err);
+    return null;
+  }
+}
+
+// Update all hotel distances
+function updateHotelDistances() {
+  if (!navigator.geolocation) {
+    alert("Geolocation not supported by your browser.");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(async (pos) => {
+    const { latitude, longitude } = pos.coords;
+
+    const hotelsData = [
+      { id: "distance-taj", coords: hotels.taj },
+      { id: "distance-lalit", coords: hotels.lalit },
+      { id: "distance-mountview", coords: hotels.mountview }
+    ];
+
+    for (const h of hotelsData) {
+      const result = await getRealDistanceORS(latitude, longitude, h.coords.lat, h.coords.lon);
+      const el = document.getElementById(h.id);
+
+      if (result && el) {
+        el.textContent = `📍 Distance: ${result.distanceKm} km · ⏱️ ${result.durationMin} min`;
+      } else if (el) {
+        el.textContent = "📍 Distance: Unavailable";
+      }
+    }
+  },
+  (err) => {
+    console.warn("Location access denied:", err);
+    alert("Please allow location access to calculate distances.");
+  });
+}
+
+window.addEventListener("load", updateHotelDistances);
