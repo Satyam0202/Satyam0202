@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login • Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="hero">
+    <section class="card">
+      <h1>Secure document access</h1>
+      <p class="small">This demo is static. Click the button to view the dashboard demo.</p>
+      <button id="go" class="button">Go to Dashboard</button>
+    </section>
+  </main>
+  <script>
+    document.getElementById('go').addEventListener('click', ()=>{
+      location.href='dashboard.html';
+    });
+  </script>
+</body>
+</html>
