@@ -32,8 +32,10 @@ async function uploadToGitHub(file) {
   });
 }
 
+const DEFAULT_GOOGLE_DRIVE_FOLDER_ID = '1l8hQdOfzbpJkjQ6g8UPwd7i_0wokJDPE';
+
 async function uploadToGoogleDrive(file) {
-  const folderId = process.env.GOOGLE_DRIVE_FOLDER_ID;
+  const folderId = process.env.GOOGLE_DRIVE_FOLDER_ID || DEFAULT_GOOGLE_DRIVE_FOLDER_ID;
   if (!folderId || !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
     return { ok: false, service: 'Google Drive' };
   }

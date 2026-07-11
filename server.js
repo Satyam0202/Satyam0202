@@ -6,6 +6,20 @@ const fs = require('fs');
 
 dotenv.config();
 
+// Support writing Google service account JSON from an environment variable.
+// This allows platforms that only accept env vars (like Render) to provide
+// the service account without uploading a file.
+if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
+  try {
+    const keyPath = path.join(__dirname, 'gdrive-service-account.json');
+    fs.writeFileSync(keyPath, process.env.GOOGLE_SERVICE_ACCOUNT_JSON, { encoding: 'utf8' });
+    process.env.GOOGLE_APPLICATION_CREDENTIALS = keyPath;
+    console.log('Google service account written to', keyPath);
+  } catch (err) {
+    console.error('Failed to write Google service account JSON:', err && err.message);
+  }
+}
+
 const app = express();
 const port = process.env.PORT || 3000;
 const uploadsDir = path.join(__dirname, 'uploads');
