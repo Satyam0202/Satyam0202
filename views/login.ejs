@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4f46e5" />
+    <title>Login • Personal Document Vault</title>
+    <link rel="icon" href="/images/favicon.jpg" type="image/jpeg" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="login-page">
+    <main class="auth-shell login-shell">
+      <section class="login-card card">
+        <div class="login-card-grid">
+          <div class="login-copy">
+            <p class="eyebrow">Welcome back</p>
+            <h1>Secure document access</h1>
+            <p class="subtext">Log in to your Personal Document Vault and keep your most important files safe.</p>
+            <form method="POST" action="/login" class="login-form">
+              <label>Username</label>
+              <input name="username" required placeholder="Enter username" value="satyam02" />
+
+              <label>Password</label>
+              <input name="password" type="password" required placeholder="Enter password" />
+
+              <% if (error) { %>
+                <p class="error"><%= error %></p>
+              <% } %>
+
+              <button type="submit">Login</button>
+            </form>
+          </div>
+          <div class="login-banner">
+            <img src="/images/login.jpg" alt="Login image" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

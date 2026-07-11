@@ -1,0 +1,9 @@
+{
+  "name": "Personal Document Vault",
+  "short_name": "Vault",
+  "start_url": "/login",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#4f46e5",
+  "icons": []
+}
